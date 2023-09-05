@@ -5,12 +5,32 @@ let leftSide = document.querySelectorAll(".side-link ul li"),
   postss = document.getElementById("postss");
 create.onclick = function () {
   post.focus();
-}
+};
 
 // Add Posts to the center Section
 let container = document.querySelector(".container-posts"),
-  title = ["for new Befan", "how Become older", "thank for support", "eldehih", "when live become better", "when live become better", "when live become better", "eldehih", "when live become better", "when live become better"],
-  photo = ["1.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "10.jpg"];
+  title = [
+    "for new Befan",
+    "how Become older",
+    "thank for support",
+    "eldehih",
+    "when live become better",
+    "when live become better",
+    "when live become better",
+    "eldehih",
+    "when live become better",
+    "when live become better",
+  ],
+  photo = [
+    "1.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "10.jpg",
+  ];
 Newposts = "";
 for (let i = 0; i < photo.length; i++) {
   Newposts += `
@@ -56,101 +76,94 @@ for (let i = 0; i < photo.length; i++) {
 </div>
 
 
-`
+`;
   container.innerHTML = Newposts;
 }
-leftSide.forEach(link => {
+leftSide.forEach((link) => {
   link.addEventListener("click", () => {
-    mess.classList.remove("border")
-    leftSide.forEach(link => {
-      link.classList.remove("active")
-    })
+    mess.classList.remove("border");
+    leftSide.forEach((link) => {
+      link.classList.remove("active");
+    });
     link.classList.add("active");
-  })
-
-
-})
+  });
+});
 // change buttons background
 let leftSidelink = document.querySelectorAll(".side-link ul li"),
   body = document.getElementById("body"),
   btn = document.querySelectorAll(".button"),
   btnColor = document.querySelectorAll(".color-change .butt");
-btn.forEach(btn => {
-  btnColor.forEach(change => {
-
+btn.forEach((btn) => {
+  btnColor.forEach((change) => {
     change.addEventListener("click", function () {
-      btnColor.forEach(change => {
+      btnColor.forEach((change) => {
         change.classList.remove("active");
-      })
+      });
       btn.classList.add("active");
       btn.style.backgroundColor = change.dataset.color;
-      leftSidelink.forEach(link => {
+      leftSidelink.forEach((link) => {
         link.style.color = change.dataset.color;
-      })
-
-    })
-  })
-})
-btnColor.forEach(change => {
+      });
+    });
+  });
+});
+btnColor.forEach((change) => {
   change.addEventListener("click", function () {
-    btnColor.forEach(change => {
+    btnColor.forEach((change) => {
       change.classList.remove("colors-bullets");
-    })
-      change.classList.add("colors-bullets");
-  })
-  })
+    });
+    change.classList.add("colors-bullets");
+  });
+});
 // themes code
 let setting = document.querySelector(".model-setting"),
   theme = document.getElementById("themes");
 theme.addEventListener("click", () => {
-  setting.classList.toggle("display")
-
-})
+  setting.classList.toggle("display");
+});
 
 // change body background
 let light = document.querySelectorAll(".fff"),
   bod = document.querySelectorAll(".eee"),
   back = document.querySelectorAll(".back div"),
   header = document.querySelector(".header");
-back.forEach(back => {
+back.forEach((back) => {
   back.addEventListener("click", () => {
-    light.forEach(light => {
+    light.forEach((light) => {
       light.style.background = back.dataset.back;
       body.style.color = back.dataset.text;
-    })
-    bod.forEach(bod => {
+    });
+    bod.forEach((bod) => {
       bod.style.background = back.dataset.body;
-      body.style.color = back.dataset.text
-    })
-  })
-})
+      body.style.color = back.dataset.text;
+    });
+  });
+});
 // Add border to the messages component
 let mess = document.querySelector(".message"),
   message = document.getElementById("message");
 message.onclick = function () {
-  mess.classList.add("border")
+  mess.classList.add("border");
   searchMessage.focus();
-}
+};
 
 // add class bottom to the span
 let spans = document.querySelectorAll(".head-message span");
-spans.forEach(span => {
+spans.forEach((span) => {
   span.addEventListener("click", () => {
     span.classList.add("bottom");
 
-    spans.forEach(spans => {
+    spans.forEach((spans) => {
       spans.classList.remove("bottom");
-    })
+    });
     span.classList.add("bottom");
-  })
-})
-
+  });
+});
 
 // Add The List Of Friends To the Messengers
 let friendMessenger = document.querySelector(".friend-container"),
   friends = ["alex", "moghera", "abeer", "hosham", "xxander"],
   mainProfiloPhoto = ["1.jpg", "7.jpg", "3.jpg", "4.jpg", "5.jpg"],
-
   messageContainer = "";
 for (let i = 0; i < 5; i++) {
   messageContainer += `
@@ -163,7 +176,7 @@ for (let i = 0; i < 5; i++) {
   <p>Just Now</p>
 </div>
 </div>  
-  `
+  `;
   friendMessenger.innerHTML = messageContainer;
 }
 // Search friends in messenger
@@ -181,7 +194,7 @@ function searchData(val) {
       <p>Just Now</p>
     </div>
     </div>  
-      `
+      `;
     }
   }
   friendMessenger.innerHTML = messageContainer;
