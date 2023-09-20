@@ -1,5 +1,5 @@
 /* Import Font Google */
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;0,800;1,300;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;0,800;1,300;1,400;1,700&display=swap');
 * {
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +8,7 @@
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Cairo", sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
 body {
@@ -342,17 +342,18 @@ input::placeholder {
   border-radius: 17px;
   min-height: 100vh;
 }
+
 .model-setting {
   position: absolute;
   position: fixed;
-  z-index: 9998;
-  top: 40%;
+  top: 60%;
   left: 20%;
   text-align: center;
   background: var(--secound-main-color);
   padding: 13px 23px;
   width: 450px;
   display: none;
+  z-index: 999;
 }
 
 @media (max-width: 710px) {
@@ -364,7 +365,7 @@ input::placeholder {
 
 @media (max-width: 396px) {
   .model-setting {
-    width: 80vw;
+    width: 70vw;
   }
 }
 
@@ -451,11 +452,11 @@ input::placeholder {
 
 .image-1 {
   position: relative;
+  width: 33.3%;
+  border: solid 1px #0781e4;
+  border-radius: 10px;
 }
-@media (max-width: 350px) {
-  .image-1 {
-    width: 33% !important;
-  }
+@media (max-width: 400px) {
   .image-1:nth-of-type(4) {
     display: none;
   }
@@ -464,9 +465,10 @@ input::placeholder {
   transform: scale(1.03);
   filter: grayscale(100%);
 }
+
 .image-1 img {
   height: 250px;
-  border-radius: 14px;
+  border-radius: 10px;
   cursor: pointer;
   z-index: 1;
   transition: 0.4s;

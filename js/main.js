@@ -22,14 +22,16 @@ let container = document.querySelector(".container-posts"),
     "when live become better",
   ],
   photo = [
-    "1.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
+    "1.jpeg",
+    "2.jpeg",
+    "3.jpeg",
+    "4.jpeg",
+    "5.png",
+    "6.jpeg",
     "7.jpg",
     "8.jpg",
-    "10.jpg",
+    "9.jpeg",
+    "10.jpeg",
   ];
 Newposts = "";
 for (let i = 0; i < photo.length; i++) {
@@ -37,7 +39,7 @@ for (let i = 0; i < photo.length; i++) {
 <div class="posts-box fff">
 <div class="content-post">
   <div class="icon-post">
-    <img src="image/1.jpg">
+    <img src="image/9.jpeg">
   </div>
   <div class="text-post">
     <h3>AhmedXXander</h3>
@@ -62,9 +64,9 @@ for (let i = 0; i < photo.length; i++) {
 <div class="under-footer">
   <div class="footer-3">
     <div class="image-footer">
-      <img src="image/1.jpg" alt="">
-      <img src="image/7.jpg" alt="">
-      <img src="image/6.jpg" alt="">
+      <img src="image/1.jpeg" alt="">
+      <img src="image/2.jpeg" alt="">
+      <img src="image/3.jpeg" alt="">
     </div>
     <div class="content-footer">
       <p>liked By Ahmed And 2877others</p>
@@ -88,6 +90,7 @@ leftSide.forEach((link) => {
     link.classList.add("active");
   });
 });
+
 // change buttons background
 let leftSidelink = document.querySelectorAll(".side-link ul li"),
   body = document.getElementById("body"),
@@ -107,6 +110,7 @@ btn.forEach((btn) => {
     });
   });
 });
+
 btnColor.forEach((change) => {
   change.addEventListener("click", function () {
     btnColor.forEach((change) => {
@@ -117,10 +121,14 @@ btnColor.forEach((change) => {
 });
 // themes code
 let setting = document.querySelector(".model-setting"),
-  theme = document.getElementById("themes");
-theme.addEventListener("click", () => {
+theme = document.getElementById("themes");
+theme.addEventListener("click", (e) => {
   setting.classList.toggle("display");
+  e.stopPropagation();
 });
+
+setting.addEventListener("click", (e) => e.stopPropagation())
+document.body.addEventListener("click", () => setting.classList.remove("display"))
 
 // change body background
 let light = document.querySelectorAll(".fff"),
@@ -163,7 +171,7 @@ spans.forEach((span) => {
 // Add The List Of Friends To the Messengers
 let friendMessenger = document.querySelector(".friend-container"),
   friends = ["alex", "moghera", "abeer", "hosham", "xxander"],
-  mainProfiloPhoto = ["1.jpg", "7.jpg", "3.jpg", "4.jpg", "5.jpg"],
+  mainProfiloPhoto = ["5.png", "4.jpeg", "3.jpeg", "2.jpeg", "1.jpeg"],
   messageContainer = "";
 for (let i = 0; i < 5; i++) {
   messageContainer += `
